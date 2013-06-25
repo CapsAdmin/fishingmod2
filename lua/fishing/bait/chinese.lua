@@ -1,0 +1,1 @@
+local BAIT = {}BAIT.ClassName = "chinese"BAIT.Model = "models/props_junk/garbage_takeoutcarton001a.mdl"BAIT.PositionOffset = Vector(0,0,-5)BAIT.Base = "fishing_bait_base_move"function BAIT:MoveHook(hook_phys, ply)	self:AddHookVelocity(Vector(0,0,hook_phys:GetMass() * 5))endfishing.RegisterBait(BAIT)

@@ -124,12 +124,14 @@ do -- base
 
 				self:SetPos(self.hook:LocalToWorld(self.PositionOffset))
 				self:SetAngles(self.hook:LocalToWorldAngles(self.AngleOffset))
+				
+				local phys = self:GetPhysicsObject()
+				phys:Wake()
+				phys:SetVelocity(self.hook:GetVelocity())
 
 				local hook = self.hook
 				hook.attached[self.FishingType] = NULL
 				self.hook = NULL
-
-				self:PhysWake()
 
 				self:OnDetach(hook)
 			end

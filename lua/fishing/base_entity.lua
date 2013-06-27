@@ -220,6 +220,9 @@ do -- bait
 			META.IsFishingEntity = true
 			META.FishingType = TYPE
 			META.FishingClassName = META.ClassName
+			if not META.Description then
+				META.Description =  "no description ..."
+			end
 
 			local class = "fishing_" .. TYPE:lower() .. "_" .. META.ClassName
 

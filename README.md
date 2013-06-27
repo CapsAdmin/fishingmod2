@@ -1,0 +1,1 @@
+This is the new fishing mod. It's a little different from the last one. Fish are live in the water now and it uses PAC3 for the rods so they look better, better code ETCIt's a work in progress it doesn't really work at the moment. I'm just putting it on github for convenience.

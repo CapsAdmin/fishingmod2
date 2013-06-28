@@ -102,7 +102,7 @@ do -- spots
 
 	end
 end
-
+ 
 do -- fish spawning
 	function fishing.CalcFishSpawner()
 		if not fishing.IsSomeoneFishing() then return end
@@ -114,7 +114,7 @@ do -- fish spawning
 
 			if data then
 				local FISH = scripted_ents.Get(data.class.real)
-			
+				if not FISH.Rareness or not FISH.MaxSpawned then print(data.class.real) end
 				if #ents.FindByClass(data.class.real) < FISH.MaxSpawned and math.random() > FISH.Rareness then
 					local ent = fishing.CreateFish(data.class.short, pos, (-(data.depth / 3200) + 1) * 15)
 

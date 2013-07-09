@@ -218,6 +218,7 @@ do -- option extension
 	end
 
 	function meta:SaveLuaDataOptions()
+		file.CreateDir("luadata_options")
 		luadata.WriteFile("luadata_options/" .. self:UniqueID() .. ".txt", self.LuaDataOptions)
 	end
 

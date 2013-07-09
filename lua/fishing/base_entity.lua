@@ -76,9 +76,8 @@ do -- base
 
 		function ENT:SetSize(num)
 			self:SetModelScale(num, 0)
-
 			
-			local phys = self:GetPhysicsObject()
+			--[[local phys = self:GetPhysicsObject()
 			local mdl = phys:GetMesh()
 
 			for key, vtx in pairs(mdl) do
@@ -86,7 +85,7 @@ do -- base
 			end
 
 			self:PhysicsFromMesh(mdl)
-			self:EnableCustomCollisions(true)
+			self:EnableCustomCollisions(true)]]
 
 			self.Size = num
 
@@ -224,6 +223,10 @@ do -- bait
 				META.Description =  "no description ..."
 			end
 
+			if not META.Name then
+				META.Name = META.ClassName:gsub("_", " ")
+			end
+			
 			local class = "fishing_" .. TYPE:lower() .. "_" .. META.ClassName
 
 			fishing.Entities[META.ClassName] = class
